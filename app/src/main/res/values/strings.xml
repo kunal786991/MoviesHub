@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Movie Database</string>
+    <string name="search_hint">Search movies...</string>
+    <string name="trending_title">Trending</string>
+    <string name="now_playing_title">Now Playing</string>
+    <string name="bookmark">Bookmark</string>
+    <string name="share">Share</string>
+    <string name="bookmarks_title">Bookmarked Movies</string>
+    <string name="rating">Rating :</string>
+</resources>
