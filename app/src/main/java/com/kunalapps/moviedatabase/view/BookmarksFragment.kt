@@ -1,4 +1,4 @@
-package com.kunalapps.moviedatabase
+package com.kunalapps.moviedatabase.view
 
 import android.os.Bundle
 import android.view.View
@@ -7,6 +7,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.kunalapps.moviedatabase.R
 import com.kunalapps.moviedatabase.adapter.MovieAdapter
 import com.kunalapps.moviedatabase.viewModel.MovieViewModel
 import com.kunalapps.moviedatabase.viewModel.MovieViewModelFactory

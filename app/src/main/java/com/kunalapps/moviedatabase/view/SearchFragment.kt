@@ -1,19 +1,17 @@
-package com.kunalapps.moviedatabase
+package com.kunalapps.moviedatabase.view
 
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.EditText
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.kunalapps.moviedatabase.R
 import com.kunalapps.moviedatabase.adapter.MovieAdapter
 import com.kunalapps.moviedatabase.viewModel.MovieViewModel
 import com.kunalapps.moviedatabase.viewModel.MovieViewModelFactory

@@ -1,4 +1,4 @@
-package com.kunalapps.moviedatabase
+package com.kunalapps.moviedatabase.view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -6,6 +6,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupActionBarWithNavController
+import com.kunalapps.moviedatabase.R
 
 
 class MainActivity : AppCompatActivity() {

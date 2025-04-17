@@ -1,17 +1,16 @@
-package com.kunalapps.moviedatabase
+package com.kunalapps.moviedatabase.view
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
 import android.widget.CheckBox
 import android.widget.ImageButton
 import android.widget.ImageView
-import android.widget.RadioButton
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.bumptech.glide.Glide
+import com.kunalapps.moviedatabase.R
 import com.kunalapps.moviedatabase.viewModel.MovieViewModel
 import com.kunalapps.moviedatabase.viewModel.MovieViewModelFactory
 

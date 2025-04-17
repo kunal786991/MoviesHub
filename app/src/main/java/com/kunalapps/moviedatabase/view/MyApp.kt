@@ -1,9 +1,10 @@
-package com.kunalapps.moviedatabase
+package com.kunalapps.moviedatabase.view
 
 import com.kunalapps.moviedatabase.data.local.MovieDatabase
 import com.kunalapps.moviedatabase.repository.MovieRepository
 
 import android.app.Application
+import com.kunalapps.moviedatabase.data.remote.RetrofitClient
 
 class MyApp : Application() {
     lateinit var repository: MovieRepository

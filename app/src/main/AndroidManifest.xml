@@ -6,7 +6,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".MyApp"
+        android:name=".view.MyApp"
         android:allowBackup="true"
         android:label="MoviesHub"
         android:icon="@mipmap/ic_launcher"
@@ -16,7 +16,7 @@
 
         <!-- Launcher Activity -->
         <activity
-            android:name=".MainActivity"
+            android:name=".view.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.MovieDatabase">
             <intent-filter>

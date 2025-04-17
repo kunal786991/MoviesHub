@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.kunalapps.moviedatabase.HomeFragment"
+        android:name="com.kunalapps.moviedatabase.view.HomeFragment"
         android:label="MoviesHub">
 
         <action
@@ -22,7 +22,7 @@
     </fragment>
     <fragment
         android:id="@+id/searchFragment"
-        android:name="com.kunalapps.moviedatabase.SearchFragment"
+        android:name="com.kunalapps.moviedatabase.view.SearchFragment"
         android:label="Search">
         <action
             android:id="@+id/action_search_to_details"
@@ -31,7 +31,7 @@
 
     <fragment
         android:id="@+id/bookmarksFragment"
-        android:name="com.kunalapps.moviedatabase.BookmarksFragment"
+        android:name="com.kunalapps.moviedatabase.view.BookmarksFragment"
         android:label="Bookmarks">
         <action
             android:id="@+id/action_bookmarks_to_details"
@@ -44,7 +44,7 @@
 
     <fragment
         android:id="@+id/movieDetailFragment"
-        android:name="com.kunalapps.moviedatabase.MovieDetailFragment"
+        android:name="com.kunalapps.moviedatabase.view.MovieDetailFragment"
         android:label="Movie Details">
         <argument
             android:name="movieId"
