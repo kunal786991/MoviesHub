@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
@@ -33,14 +32,15 @@ class MovieAdapter(
         private val title = view.findViewById<TextView>(R.id.textTitle)
         private val date = view.findViewById<TextView>(R.id.textReleaseDate)
         private val rating = view.findViewById<TextView>(R.id.textRating)
+
         @SuppressLint("SetTextI18n", "DefaultLocale")
         fun bind(movie: Movie) {
-
             title.text = movie.title
             date.text = movie.release_date
             val ratingFormatted = String.format("%.1f/10", movie.vote_average)
-            rating.text =ratingFormatted
-            Glide.with(itemView).load("https://image.tmdb.org/t/p/w500${movie.poster_path}").into(poster)
+            rating.text = ratingFormatted
+            Glide.with(itemView).load("https://image.tmdb.org/t/p/w500${movie.poster_path}")
+                .into(poster)
             itemView.setOnClickListener { onClick(movie) }
 
         }

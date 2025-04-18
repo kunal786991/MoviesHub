@@ -17,10 +17,10 @@ abstract class MovieDatabase : RoomDatabase() {
         fun getInstance(context: Context): MovieDatabase {
             return INSTANCE ?: synchronized(this) {
                 Room.databaseBuilder(
-                                context.applicationContext,
-                                MovieDatabase::class.java,
-                                "movie_database"
-                            ).fallbackToDestructiveMigration(false).build().also { INSTANCE = it }
+                    context.applicationContext,
+                    MovieDatabase::class.java,
+                    "movie_database"
+                ).fallbackToDestructiveMigration(false).build().also { INSTANCE = it }
             }
         }
     }

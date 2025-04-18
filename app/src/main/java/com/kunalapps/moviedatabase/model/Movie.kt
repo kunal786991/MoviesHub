@@ -14,7 +14,7 @@ data class Movie(
     val poster_path: String?,
     val release_date: String?,
     val isBookmarked: Boolean = false,
-    val category: String ="",
+    val category: String = "",
     val vote_average: Double = 0.0
 ) : Parcelable
 

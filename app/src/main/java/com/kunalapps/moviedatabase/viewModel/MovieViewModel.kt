@@ -1,6 +1,5 @@
 package com.kunalapps.moviedatabase.viewModel
 
-
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -9,18 +8,22 @@ import androidx.lifecycle.liveData
 import androidx.lifecycle.viewModelScope
 import com.kunalapps.moviedatabase.model.Movie
 import com.kunalapps.moviedatabase.repository.MovieRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class MovieViewModel(private val repository: MovieRepository) : ViewModel() {
-    val moviesByCategoryTrending: LiveData<List<Movie>> = repository.getMoviesByCategory("trending").asLiveData()
-    val moviesByCategoryNowPlaying: LiveData<List<Movie>> = repository.getMoviesByCategory("now_playing").asLiveData()
-
+@HiltViewModel
+class MovieViewModel @Inject constructor(private val repository: MovieRepository) : ViewModel() {
+    val moviesByCategoryTrending: LiveData<List<Movie>> =
+        repository.getMoviesByCategory("trending").asLiveData()
+    val moviesByCategoryNowPlaying: LiveData<List<Movie>> =
+        repository.getMoviesByCategory("now_playing").asLiveData()
     val bookmarked: LiveData<List<Movie>> = repository.getBookmarkedMovies().asLiveData()
 
     private val _searchResults = MutableLiveData<List<Movie>>()
     val searchResults: LiveData<List<Movie>> = _searchResults
 
-    fun fetchTrending(apiKey: String) = viewModelScope.launch {
+    fun fetchTrending(apiKey: String) = viewModelScope.launch{
         repository.fetchAndCacheTrending(apiKey)
     }
 
@@ -37,7 +40,7 @@ class MovieViewModel(private val repository: MovieRepository) : ViewModel() {
     }
 
     fun loadMovie(id: Int, apiKey: String): LiveData<Movie?> = liveData {
-        emit(repository.loadMovieWithNetworkFallback(id, apiKey))
+        emit(repository.loadMovie(id, apiKey))
     }
 }
 

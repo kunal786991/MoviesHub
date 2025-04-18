@@ -8,18 +8,15 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import com.bumptech.glide.Glide
 import com.kunalapps.moviedatabase.R
 import com.kunalapps.moviedatabase.viewModel.MovieViewModel
-import com.kunalapps.moviedatabase.viewModel.MovieViewModelFactory
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MovieDetailFragment : Fragment(R.layout.fragment_movie_detail) {
-
-    private val viewModel: MovieViewModel by activityViewModels {
-        MovieViewModelFactory((requireActivity().application as MyApp).repository)
-    }
-
+    private val viewModel: MovieViewModel by viewModels()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val apiKey = "54969c34fe6c23296273a590dafbc63a"
         val movieId = arguments?.getInt("movieId") ?: return
@@ -29,7 +26,6 @@ class MovieDetailFragment : Fragment(R.layout.fragment_movie_detail) {
         val btnBookmark = view.findViewById<CheckBox>(R.id.btnBookmark)
         val btnShare = view.findViewById<ImageButton>(R.id.btnShare)
         val rating = view.findViewById<TextView>(R.id.textRating)
-
 
         viewModel.loadMovie(movieId, apiKey).observe(viewLifecycleOwner) { movie ->
             movie?.let {
@@ -41,7 +37,6 @@ class MovieDetailFragment : Fragment(R.layout.fragment_movie_detail) {
                 btnBookmark.text = if (it.isBookmarked) "Unbookmark" else "Bookmark"
                 Glide.with(this).load("https://image.tmdb.org/t/p/w500${it.poster_path}")
                     .into(imgPoster)
-
                 btnBookmark.setOnClickListener {
                     viewModel.toggleBookmark(movie)
                     btnBookmark.text = if (btnBookmark.isChecked) "Unbookmark" else "Bookmark"
